@@ -47,7 +47,12 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+a {
+	text-decoration: none;
+	color: currentColor;			
+}
 body {
+	background-color: #FFFEF8;
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
@@ -56,29 +61,27 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0 140px 0;
 }
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
-
-h1{
+h1 {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
 }
-
 h1 > span {
-	font-family: 'Work Sans';
+	font-family: 'Work Sans';	
 	font-size:10px;
+	font-weight: 400;
 	letter-spacing: 0.1em;
-;
+	margin-top: 5PX;
 }
-
-h2{
+h2 {
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
@@ -88,36 +91,34 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
 nav li {
-	padding: 0 10px;
+	padding: 0 20px;
 	font-size: 1.2em;
 }
-
-li:hover {
+li:hover {	
 	color: #B1663C;
 }
 #introduction {
 	display: flex;
 	align-items: center;
+	margin-bottom: 11em;
+	margin-left: 2.5em;
 }
 #introduction figure {
-	flex: 1
+	flex: 1.1;	
 }
 #introduction img {
 	display: block;
 	margin: auto;
 	width: 80%;
 }
-
 #introduction article {
-	flex: 1
+	flex: 0.94
 }
 #introduction h2 {
 	margin-bottom: 1em;
 }
-
 #introduction p {
 	margin-bottom: 0.5em;
 }
@@ -132,44 +133,42 @@ li:hover {
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
-
 .gallery img {
 	width: 100%;
-
 }
-#contact {
+#contact, #LogIn {
 	width: 50%;
-margin: auto;
+    margin: auto;
 }
-#contact > * {
+#LogIn {
+	margin-top: 162px;
+}
+#contact > * , #LogIn > * {
 	text-align: center;
-
 }
-#contact h2{
+#contact h2, #LogIn h2{
 	margin-bottom: 20px;
 }
-#contact form {
+#contact form, #LogIn form{
 	text-align: left;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 }
-
-#contact input {
+#contact input, #LogIn input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label {
+#contact label, #LogIn label {
 	margin: 2em 0 1em 0;
 }
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-
-input[type="submit"]{
+input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -179,10 +178,98 @@ input[type="submit"]{
 	text-align: center;
 	border-radius: 60px ;
 }
-
 footer nav ul {
-	display: flex;
+	display: flex;	
 	justify-content: flex-end;
 	margin: 2em
 }
+#LoginFooter {
+	text-align:right;
+    height: 48px;
+    width: 59%; 
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;	   
+}	
+.ABold {	
+	font-weight: bold;
+}
+#errorMsg {
+	font-size: 1.2em;
+	color: red;
+	margin: 10px;	
+}
+.LostPass {	
+	text-decoration: underline;
+}
 
+
+/*Mise en forme des filtres*/
+.filtres {
+	display: flex;	
+	justify-content: center;
+	margin: 51px 0;	
+}
+.filtres button {
+	font-family: 'syne';	
+	font-size: 1.1em;
+	font-weight: 700;
+	color: #1D6154;
+	padding: 8px 10px;
+	margin: 0 5px;
+	min-width: 100px;
+	background-color:transparent;
+	border: #1D6154 1px solid;
+	border-radius: 25px;
+}
+.filtres button:hover, .filtres button:active {
+	color: #E5E5E5;
+	background-color: #1D6154;
+}
+
+
+
+/*--------------------------CSS version Log--------------------------*/
+
+
+
+/* Barre édition haute */
+.connected {	
+	display: none;	
+}
+.topBar {
+	margin-bottom: 100px;
+}
+.modifs { 
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	background-color: black;
+	width: 100%;
+	height: 59px;	
+}
+.modifs button {
+	border-radius: 60px;
+	border: none;
+	font-family: 'Work Sans';
+	padding: 11px 25px;
+}
+.validation {
+	font-size: 14px;
+	font-weight: 500;	
+	background-color: white;
+}
+.fa-regular.fa-pen-to-square {
+	font-size: 1.2em;
+}
+.edition {	
+	font-size: 16px;
+	font-weight: 400;	
+	background-color: black;
+	color: white;
+}
