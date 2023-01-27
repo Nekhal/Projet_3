@@ -10,13 +10,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="./assets/images/sophie-bluel.png">
 	<meta name="description" content="">
-	<link rel="stylesheet" href="/FrontEnd/assets/style.css">		
+	<link rel="stylesheet" href="/FrontEnd/assets/style.css">
 </head>
 <body>
 <!--Partie visible une fois connecté-->	
 <section class="connected topBar">
 	<div class="modifs">
-		<button class="edition"><i class="fa-regular fa-pen-to-square"></i>&nbsp;&nbsp;Mode&nbsp;édition</button>
+		<button class="edition"><i class="fa-regular fa-pen-to-square"></i>Mode&nbsp;édition</button>
 		<button class="validation">publier&nbsp;les&nbsp;changements</button>
 	</div>
 </section>
@@ -28,7 +28,7 @@
 		<ul>
 			<li><a href="#portfolio">projets</a></li>
 			<li><a href="#contact">contact</a></li>
-			<li><a href="./Login.html">login</a></li>
+			<li><a id="loginBtn" href="./Login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -37,10 +37,13 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<!--Partie visible une fois connecté-->
+			<figcaption class="connected edit01"><i class="fa-regular fa-pen-to-square"></i>modifier</figcaption>
+			<!--Fin-->
 		</figure>
 		<article>
 			<!--Partie visible une fois connecté-->
-			<div class="connected edit01">
+			<div class="connected edit02">
 				<i class="fa-regular fa-pen-to-square"></i>modifier
 			</div>
 			<!--Fin-->
@@ -51,18 +54,13 @@
 			<br>
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être<br>constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
-	</section>
-	<!--Partie visible une fois connecté-->
-	<div class="connected edit02">
-		<i class="fa-regular fa-pen-to-square"></i>modifier
-	</div>
-	<!--Fin-->
+	</section>	
 	<section id="portfolio">
 		<!--Partie visible une fois connecté-->
 		<div class="connected edit03">
-			<i class="fa-regular fa-pen-to-square"></i>modifier
+			<a href="#openModal1"><i class="fa-regular fa-pen-to-square"></i>modifier</a>
 		</div>
-		<!--Fin-->		
+		<!--Fin-->
 		<h2>Mes Projets</h2>
 		<div class="filtres">			
 			<button class="btn-all">Tous</button>			
@@ -70,51 +68,54 @@
 			<button class="btn-appart">Appartements</button>			
 			<button class="btn-hr">Hôtels&nbsp;&&nbsp;restaurants</button> 			
 		</div>
-		<div class="gallery">
-			<!--<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>-->
+	<!--Modale1-->	
+	<div id="openModal1" class="modal1">
+		<div class="modalContent">
+			<h3>Galerie photo</h3>
+			<div class="miniGalery"></div>	
+			<hr>					
+			<a href="#openModal2" class="modalButton">Ajouter&nbsp;une&nbsp;photo</a>
+			<a href="#" class="deleteAll">Supprimer la galerie</a>
+			<a href="#" class="modalClose">&times;</a>
+		</div>
+	</div>
+	<!--Fin de la modale1-->		
+	<!--Modale2-->	
+	<div id="openModal2" class="modal2">
+		<div class="modalContent">
+			<h3>Ajout photo</h3>
+			<form class="addPhoto">
+				<div class="addPhotoArea">
+					<i class="fa-regular fa-image"></i>
+					<div class="upload">
+						<button class="uploadBtn" >+ Ajouter photo</button>
+						<input type="file" id="addFile" accept=".png, .jpeg">
+					</div>					
+					<span>jpg. png : 4mo max</span>
+				</div>
+				<label for="text">Titre</label>
+			    <input type="text" name="titre" id="titre">
+				<label for="text">Catégorie</label>
+			    <input type="number" name="titre" id="titre">
+			</form>
+			<hr>
+			<a href="#openModal3" class="modalButton2">Valider</a>
+			<a href="#openModal1" class="modalPrec"><i class="fa-solid fa-arrow-left-long"></i></a>
+			<a href="#" class="modalClose">&times;</a>
+		</div>
+	</div>
+	<!--Fin de la modale2-->
+	<!--Modale3-->	
+	<div id="openModal3" class="modal3">
+		<div class="modalContent">
+			<h3>Ajout photo</h3>
+			<div class="previewAdd"></div>
+			<a href="#openModal2" class="modalPrec"><i class="fa-solid fa-arrow-left-long"></i></a>
+			<a href="#" class="modalClose">&times;</a>
+		</div>
+	</div>
+	<!--Fin de la modale3-->	
+		<div class="gallery">			
 		</div>		
 	</section>
 	<section id="contact">
@@ -129,9 +130,10 @@
 			<textarea name="message" id="message" cols="30" rows="10"></textarea>
 			<input type="submit" value="Envoyer">
 		</form>
-	</section>	
+	</section>
+	
 </main>
-<footer>
+<footer id="footer">
 	<nav>
 		<ul>
 			<li>Mentions Légales</li>
@@ -139,5 +141,7 @@
 	</nav>
 </footer>
 <script type="module" src="/FrontEnd/index.js"></script>
+<!--<script src="/FrontEnd/edition.js"></script>
+<script src="/FrontEnd/categories.js"></script>-->
 </body>
 </html>
